@@ -1,0 +1,5 @@
+.idea
+logrus.log
+petstore-kovalyk
+**images/*
+**tmp/*

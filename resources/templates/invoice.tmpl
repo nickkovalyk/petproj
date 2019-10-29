@@ -1,0 +1,15 @@
+# Invoice for {{.Date}}
+    {{$orders := len .Orders}}
+    {{if gt $orders 0}}
+    ## Orders
+    | Pet id| Quantity|Ship date|Complete| Status|
+    |------ | --------|---------|--------|-------|
+        {{range .Orders}}
+              |{{.ID}}|{{.Quantity}}|{{.ShipDate}}|{{.Complete}}|{{.Status}}|
+        {{end}}
+    | Total orders | Total sold pets count|
+    |--------------|-----------------|
+    |{{$orders}}   |{{.TotalQuantity}}    |
+    {{else}}
+        ## No Orders for that period
+    {{end}}
